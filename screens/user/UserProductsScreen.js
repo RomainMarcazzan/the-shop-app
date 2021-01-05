@@ -8,7 +8,7 @@ import Colors from "../../constants/Colors";
 import * as productsActions from "../../store/actions/products";
 
 const UserProductsScreen = (props) => {
-  const userProduct = useSelector((state) => state.products.userProducts);
+  const userProducts = useSelector((state) => state.products.userProducts);
   const dispatch = useDispatch();
 
   const editProductHandler = (id) => {
@@ -16,7 +16,7 @@ const UserProductsScreen = (props) => {
   };
 
   const deleteHandler = (id) => {
-    Alert.alert("Are you sure ? Do you want to delete this item ?", [
+    Alert.alert("Are you sure ?", "Do you want to delete this item ?", [
       { text: "No", style: "default" },
       {
         text: "Yes",
@@ -30,7 +30,7 @@ const UserProductsScreen = (props) => {
 
   return (
     <FlatList
-      data={userProduct}
+      data={userProducts}
       keyExtractor={(item) => item.id}
       renderItem={(itemData) => (
         <ProductItem
@@ -45,7 +45,7 @@ const UserProductsScreen = (props) => {
             color={Colors.primary}
             title="Edit"
             onPress={() => {
-              editProductHandler(item.data.id);
+              editProductHandler(itemData.item.id);
             }}
           />
           <Button

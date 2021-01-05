@@ -7,6 +7,7 @@ import productsReducer from "./store/reducers/products";
 import cartReducer from "./store/reducers/cart";
 import ShopNavigator from "./navigation/ShopNavigator";
 import ordersReducer from "./store/reducers/order";
+import { LogBox } from "react-native";
 
 const rootReducer = combineReducers({
   products: productsReducer,
@@ -23,6 +24,9 @@ const fetchFonts = () => {
 };
 
 export default function App() {
+  LogBox.ignoreLogs([
+    "It appears that you are using old version of react-navigation library",
+  ]);
   const [fontLoaded, setFontLoaded] = useState(false);
 
   if (!fontLoaded) {

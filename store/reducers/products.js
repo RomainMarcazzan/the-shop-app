@@ -15,11 +15,11 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case CREATE_PRODUCT:
       const newProduct = new Product(
-        new Date.toString(),
+        new Date().toString(),
         "u1",
         action.productData.title,
         action.productData.imageUrl,
-        action.producData.descrition,
+        action.productData.description,
         action.productData.price
       );
       return {
@@ -37,7 +37,7 @@ export default (state = initialState, action) => {
         state.userProducts[indexProduct].ownerId,
         action.productData.title,
         action.productData.imageUrl,
-        action.productData.descrition,
+        action.productData.description,
         state.userProducts[indexProduct].price
       );
       const updatedUserProducts = [...state.userProducts];

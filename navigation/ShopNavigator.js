@@ -7,7 +7,7 @@ import Colors from "../constants/Colors";
 import ProductsOverviewScreen from "../screens/shop/ProductsOverviewScreen";
 import ProductDetailScreen from "../screens/shop/ProductDetailScreen";
 import UserProductsScreen from "../screens/user/UserProductsScreen";
-import EditProductScreen from "../screens/user/UserProductsScreen";
+import EditProductScreen from "../screens/user/EditProductScreen";
 import CartScreen from "../screens/shop/CartScreen";
 import OrdersScreen from "../screens/shop/OrdersScreen";
 import { Ionicons } from "@expo/vector-icons";
@@ -43,7 +43,7 @@ const ProductsNavigator = createStackNavigator(
 
 const AdminNavigator = createStackNavigator(
   {
-    UserProduct: UserProductsScreen,
+    UserProducts: UserProductsScreen,
     EditProduct: EditProductScreen,
   },
   {
