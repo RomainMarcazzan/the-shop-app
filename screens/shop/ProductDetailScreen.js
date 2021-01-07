@@ -14,7 +14,7 @@ import * as cartActions from "../../store/actions/cart";
 const ProductDetailScreen = (props) => {
   const productId = props.navigation.getParam("productId");
   const selectedProduct = useSelector((state) =>
-    state.products.avalaibleProducts.find((prod) => prod.id === productId)
+    state.products.availableProducts.find((prod) => prod.id === productId)
   );
 
   const dispatch = useDispatch();
