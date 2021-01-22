@@ -53,7 +53,7 @@ export default (state = initialState, action) => {
         (prod) => prod.id === action.pid
       );
 
-      const updatedAvailableProducts = [...stateavailableProducts];
+      const updatedAvailableProducts = [...state.availableProducts];
       updatedAvailableProducts[availableProductIndex] = updatedProduct;
 
       return {
